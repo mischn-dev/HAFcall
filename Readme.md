@@ -141,10 +141,10 @@ The package has several functions, some of them have to be called in a row to re
 
 ### First function
 
- always is `Allelefrequcalling` - this performs the conversion of the vcf file into Dataframes, separate for each tested sample. 
+ always is `AFcall` - this performs the conversion of the vcf file into Dataframes, separate for each tested sample and calls the allele frequency for each sample in regard to the parents allele. 
 
 ```julia
-Allelfreqcalling(vcffile, genolist, minreaddepth=1, minqual=30, maxqual=1000,posE1=1, posE2=2) \n
+AAFcall(vcffile, genolist, minreaddepth=1, minqual=30, maxqual=1000,posE1=1, posE2=2) \n
 
 overviewfile = "info.txt"
 freq  = AFcall(SNPfile.vcf, overviewfile, 3,30,1000,1,2)
