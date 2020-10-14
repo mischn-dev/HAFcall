@@ -1,11 +1,11 @@
 module HAFcall
 
 
-import DelimitedFiles, DataFrames, Statistics, CSV, ProgressMeter, Crayons, Gadfly, Compose, StatsBase
+import DataFrames, Statistics, CSV, ProgressMeter, Crayons, Gadfly, Compose, StatsBase
 
-using DelimitedFiles, DataFrames, Statistics, CSV, ProgressMeter, Crayons, Gadfly, Compose, StatsBase
+using DataFrames, Statistics, CSV, ProgressMeter, Crayons, Gadfly, Compose, StatsBase
 
-export  writeDict, readDict, AFcall, locate, HAFcall, contig, stacker, annotate
+export  writeDict, readDict, AFcall, locate, haplotyping, contig, stacker, annotate
 
 
 """
