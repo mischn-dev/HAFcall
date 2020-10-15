@@ -20,6 +20,7 @@ Within julia, execute
 ```julia
 using Pkg; Pkg.add("HAFcall"); using HAFcall
 ```
+or download HAFcall.jl from the src/ folder.
 
 ### Troubleshooting
 
