@@ -7,7 +7,7 @@ This package highlights an approach to estimate the haplotype frequency with ver
 
 ## Resources 
  
-- **Publication** <http://linktopub>
+- **Publication** <https://plantmethods.biomedcentral.com/articles/10.1186/s13007-022-00852-8>
 
 Three things are necessary to implement
 - a **vcf** file including the polymorphisms for all samples tested
