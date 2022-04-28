@@ -1,6 +1,7 @@
 # UPDATE - now supporting Julia 1.7.x 
 - additionally, the input vcf file style was changed, resulting in improved processing speeds of the *AFcall* function
 - check out https://github.com/mischn-dev/HAFcall/releases/tag/v1.1 for the latest updated release
+- minimum and maximum quality cannot be specified anymore, as this step can be outsourced to *bcftools* or *vcftools*
 
 # HAFcall.jl - Haplotype Analysis of low coverage sequencing data
 
@@ -145,13 +146,13 @@ The package has several functions, some of them have to be called in a row to re
 
 ### First function
 
- always is `Allelefrequcalling` - this performs the conversion of the vcf file into Dataframes, separate for each tested sample. 
+ always is `AFcall` - this performs the conversion of the vcf file into Dataframes, separate for each tested sample. 
 
 ```julia
-Allelfreqcalling(vcffile, genolist, minreaddepth=1, minqual=30, maxqual=1000,posE1=1, posE2=2) \n
+AFcall(vcffile, genolist, minreaddepth=1, minqual=30, maxqual=1000,posE1=1, posE2=2) \n
 
 overviewfile = "info.txt"
-freq  = AFcall(SNPfile.vcf, overviewfile, 3,30,1000,1,2)
+freq  = AFcall(SNPfile.vcf, overviewfile, 3,1,2)
 ```
 
 some adjustments can be made, like minimum coverage or quality. Additionally, it has to be specified in which row in the overviewfile the parents can be found
@@ -168,7 +169,7 @@ always is `locate` - the genomic objects will be linked to the Polymorphisms
 ```julia
 locate(info, freqfile, genolist, presplit=false,  extention=true, gap = 0.45) 
 
-freq  = AFcall(SNPfile.vcf, overviewfile, 3,30,1000,1,2)
+freq  = AFcall(SNPfile.vcf, overviewfile, 3,1,2)
 locate(reference_file, freq, overviewfile)
 ```
 
